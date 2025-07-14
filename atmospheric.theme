@@ -1,0 +1,64 @@
+# btop theme file - Atmospheric Dark
+# Save as ~/.config/btop/themes/atmospheric.theme
+
+# Main interface colors
+theme[main_bg]="#1a1d1e"
+theme[main_fg]="#a8a5a0"
+theme[title]="#7a8471"
+theme[hi_fg]="#c5c2bd"
+theme[selected_bg]="#2d3436"
+theme[selected_fg]="#ddd6c1"
+theme[inactive_fg]="#636e72"
+theme[graph_text]="#b2bec3"
+theme[meter_bg]="#2d3436"
+theme[proc_misc]="#81c784"
+theme[cpu_box]="#546e7a"
+theme[mem_box]="#6d7c83"
+theme[net_box]="#5d6d7e"
+theme[proc_box]="#5a6c57"
+theme[div_line]="#455a64"
+
+# Temperature gradient
+theme[temp_start]="#66bb6a"
+theme[temp_mid]="#ffa726"
+theme[temp_end]="#ef5350"
+
+# CPU usage gradient
+theme[cpu_start]="#4a6741"
+theme[cpu_mid]="#6b8e5a"
+theme[cpu_end]="#8fbc8f"
+
+# Memory - Free
+theme[free_start]="#37474f"
+theme[free_mid]="#546e7a"
+theme[free_end]="#78909c"
+
+# Memory - Cached
+theme[cached_start]="#5d4e75"
+theme[cached_mid]="#7986cb"
+theme[cached_end]="#9fa8da"
+
+# Memory - Available
+theme[available_start]="#4a5d23"
+theme[available_mid]="#689f38"
+theme[available_end]="#8bc34a"
+
+# Memory - Used
+theme[used_start]="#6d4c41"
+theme[used_mid]="#a1887f"
+theme[used_end]="#bcaaa4"
+
+# Network - Download
+theme[download_start]="#2e4057"
+theme[download_mid]="#4a90a4"
+theme[download_end]="#7fb3d3"
+
+# Network - Upload
+theme[upload_start]="#3d5a80"
+theme[upload_mid]="#5d7aa8"
+theme[upload_end]="#98c1d9"
+
+# Process list
+theme[process_start]="#2d4a22"
+theme[process_mid]="#4a7c59"
+theme[process_end]="#81c784"
