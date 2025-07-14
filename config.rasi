@@ -1,0 +1,187 @@
+/**
+ * Dark Atmospheric Rofi Theme
+ * Inspired by misty, moody aesthetics
+ */
+
+* {
+    background-color: transparent;
+    text-color: #c5c8c6;
+    font: "JetBrains Mono 12";
+}
+
+window {
+    transparency: "real";
+    background-color: #1a1a1a;
+    border: 2px solid;
+    border-color: #404040;
+    border-radius: 12px;
+    padding: 18px;
+    width: 450px;
+    location: center;
+    anchor: center;
+}
+
+mainbox {
+    spacing: 15px;
+    children: [inputbar, listview];
+}
+
+inputbar {
+    spacing: 10px;
+    padding: 12px;
+    background-color: #0f0f0f;
+    border: 1px solid;
+    border-color: #333333;
+    border-radius: 8px;
+    children: [entry];
+}
+
+prompt {
+    text-color: #707880;
+    font: "JetBrains Mono Bold 12";
+    enabled: false;
+}
+
+entry {
+    placeholder: "Search...";
+    placeholder-color: #4a4a4a;
+    text-color: #c5c8c6;
+    cursor: text;
+}
+
+listview {
+    lines: 6;
+    columns: 1;
+    spacing: 3px;
+    cycle: true;
+    dynamic: true;
+    scrollbar: false;
+    layout: vertical;
+    reverse: false;
+    fixed-height: true;
+}
+
+element {
+    padding: 8px 12px;
+    border-radius: 6px;
+    spacing: 8px;
+    orientation: horizontal;
+    children: [element-icon, element-text];
+}
+
+element normal.normal {
+    background-color: transparent;
+    text-color: #c5c8c6;
+}
+
+element normal.urgent {
+    background-color: #6b7280;
+    text-color: #1a1a1a;
+}
+
+element normal.active {
+    background-color: #545862;
+    text-color: #c5c8c6;
+}
+
+element selected.normal {
+    background-color: #404040;
+    text-color: #ffffff;
+    border: 1px solid;
+    border-color: #606060;
+}
+
+element selected.urgent {
+    background-color: #6b7280;
+    text-color: #1a1a1a;
+}
+
+element selected.active {
+    background-color: #404040;
+    text-color: #ffffff;
+}
+
+element alternate.normal {
+    background-color: transparent;
+    text-color: #c5c8c6;
+}
+
+element alternate.urgent {
+    background-color: #6b7280;
+    text-color: #1a1a1a;
+}
+
+element alternate.active {
+    background-color: #545862;
+    text-color: #c5c8c6;
+}
+
+element-icon {
+    size: 20px;
+    background-color: transparent;
+}
+
+element-text {
+    background-color: transparent;
+    text-color: inherit;
+    expand: true;
+    horizontal-align: 0.0;
+    vertical-align: 0.5;
+}
+
+element-text selected {
+    text-color: #ffffff;
+}
+
+scrollbar {
+    width: 4px;
+    border: 0px;
+    handle-color: #707880;
+    handle-width: 4px;
+    padding: 0px;
+}
+
+mode-switcher {
+    spacing: 10px;
+    orientation: horizontal;
+    children: [button];
+}
+
+button {
+    padding: 12px 18px;
+    background-color: #0f0f0f;
+    text-color: #c5c8c6;
+    border: 1px solid;
+    border-color: #333333;
+    border-radius: 8px;
+    horizontal-align: 0.5;
+}
+
+button selected {
+    background-color: #404040;
+    text-color: #ffffff;
+    border-color: #606060;
+}
+
+message {
+    padding: 18px;
+    background-color: #0f0f0f;
+    border: 1px solid;
+    border-color: #333333;
+    border-radius: 8px;
+    text-color: #c5c8c6;
+}
+
+textbox {
+    text-color: #c5c8c6;
+    background-color: transparent;
+    vertical-align: 0.5;
+    horizontal-align: 0.0;
+}
+
+error-message {
+    padding: 15px;
+    background-color: #6b7280;
+    text-color: #1a1a1a;
+    border-radius: 6px;
+}

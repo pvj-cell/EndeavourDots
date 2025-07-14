@@ -1,0 +1,226 @@
+-- Misty Field - Neovim Color Scheme
+-- Inspired by atmospheric misty landscapes
+-- Place this file in: ~/.config/nvim/colors/misty_field.vim
+
+" Misty Field Color Scheme
+" Clear existing highlights
+hi clear
+if exists("syntax_on")
+  syntax reset
+endif
+
+let g:colors_name = "misty_field"
+
+" Color definitions
+let s:bg = "#2a2e32"
+let s:fg = "#c8ccd4"
+let s:bg_dark = "#1f2226"
+let s:bg_darker = "#191c1f"
+let s:bg_light = "#353a40"
+let s:bg_lighter = "#404852"
+let s:current_line = "#2f3439"
+let s:selection = "#404852"
+let s:line_number = "#5a6470"
+let s:comment = "#5a6470"
+let s:cursor = "#c8ccd4"
+
+" Accent colors
+let s:mist_green = "#6b8068"
+let s:mist_blue = "#5a6b7a"
+let s:mist_brown = "#7a6b5a"
+
+" Functional colors
+let s:error = "#cc6666"
+let s:warning = "#de935f"
+let s:info = "#81a2be"
+let s:hint = "#8abeb7"
+
+" Syntax colors
+let s:string = "#8ab687"
+let s:number = "#b5bd68"
+let s:keyword = "#81a2be"
+let s:function_name = "#b294bb"
+let s:type = "#de935f"
+let s:variable = "#c8ccd4"
+
+" Git colors
+let s:git_add = "#8ab687"
+let s:git_change = "#de935f"
+let s:git_delete = "#cc6666"
+
+" Helper function
+function! s:hi(group, fg, bg, style)
+  let l:cmd = "hi " . a:group
+  if !empty(a:fg)
+    let l:cmd .= " guifg=" . a:fg
+  endif
+  if !empty(a:bg)
+    let l:cmd .= " guibg=" . a:bg
+  endif
+  if !empty(a:style)
+    let l:cmd .= " gui=" . a:style
+  endif
+  execute l:cmd
+endfunction
+
+" Editor highlights
+call s:hi("Normal", s:fg, s:bg, "")
+call s:hi("NormalFloat", s:fg, s:bg_dark, "")
+call s:hi("NormalNC", s:fg, s:bg, "")
+
+" Cursor
+call s:hi("Cursor", s:bg, s:cursor, "")
+call s:hi("CursorLine", "", s:current_line, "")
+call s:hi("CursorColumn", "", s:current_line, "")
+
+" Line numbers
+call s:hi("LineNr", s:line_number, "", "")
+call s:hi("CursorLineNr", s:mist_blue, "", "bold")
+
+" Selection
+call s:hi("Visual", "", s:selection, "")
+call s:hi("VisualNOS", "", s:selection, "")
+
+" Search
+call s:hi("Search", s:bg, s:mist_green, "")
+call s:hi("IncSearch", s:bg, s:mist_blue, "")
+
+" Status line
+call s:hi("StatusLine", s:fg, s:bg_light, "")
+call s:hi("StatusLineNC", s:comment, s:bg_dark, "")
+
+" Splits
+call s:hi("VertSplit", s:bg_light, "", "")
+call s:hi("WinSeparator", s:bg_light, "", "")
+
+" Tabs
+call s:hi("TabLine", s:comment, s:bg_dark, "")
+call s:hi("TabLineFill", "", s:bg_dark, "")
+call s:hi("TabLineSel", s:fg, s:bg, "")
+
+" Popup menu
+call s:hi("Pmenu", s:fg, s:bg_dark, "")
+call s:hi("PmenuSel", s:bg, s:mist_blue, "")
+call s:hi("PmenuSbar", "", s:bg_light, "")
+call s:hi("PmenuThumb", "", s:mist_green, "")
+
+" Folding
+call s:hi("Folded", s:comment, s:bg_light, "")
+call s:hi("FoldColumn", s:comment, s:bg, "")
+
+" Diff
+call s:hi("DiffAdd", s:git_add, s:bg_dark, "")
+call s:hi("DiffChange", s:git_change, s:bg_dark, "")
+call s:hi("DiffDelete", s:git_delete, s:bg_dark, "")
+call s:hi("DiffText", s:git_change, s:bg_light, "")
+
+" Syntax highlighting
+call s:hi("Comment", s:comment, "", "italic")
+call s:hi("String", s:string, "", "")
+call s:hi("Number", s:number, "", "")
+call s:hi("Boolean", s:number, "", "")
+call s:hi("Float", s:number, "", "")
+
+call s:hi("Keyword", s:keyword, "", "")
+call s:hi("Conditional", s:keyword, "", "")
+call s:hi("Repeat", s:keyword, "", "")
+call s:hi("Label", s:keyword, "", "")
+call s:hi("Operator", s:mist_blue, "", "")
+call s:hi("Exception", s:error, "", "")
+
+call s:hi("Function", s:function_name, "", "")
+call s:hi("Identifier", s:variable, "", "")
+call s:hi("Type", s:type, "", "")
+call s:hi("StorageClass", s:type, "", "")
+call s:hi("Structure", s:type, "", "")
+call s:hi("Typedef", s:type, "", "")
+
+call s:hi("Constant", s:mist_brown, "", "")
+call s:hi("Character", s:string, "", "")
+call s:hi("SpecialChar", s:mist_blue, "", "")
+call s:hi("Tag", s:mist_green, "", "")
+call s:hi("Delimiter", s:fg, "", "")
+call s:hi("SpecialComment", s:mist_blue, "", "")
+call s:hi("Debug", s:error, "", "")
+
+" Preprocessor
+call s:hi("PreProc", s:mist_blue, "", "")
+call s:hi("Include", s:mist_blue, "", "")
+call s:hi("Define", s:mist_blue, "", "")
+call s:hi("Macro", s:mist_blue, "", "")
+call s:hi("PreCondit", s:mist_blue, "", "")
+
+" Special
+call s:hi("Special", s:mist_green, "", "")
+call s:hi("SpecialKey", s:comment, "", "")
+call s:hi("NonText", s:comment, "", "")
+call s:hi("Directory", s:mist_blue, "", "")
+call s:hi("ErrorMsg", s:error, "", "")
+call s:hi("WarningMsg", s:warning, "", "")
+call s:hi("MoreMsg", s:mist_green, "", "")
+call s:hi("ModeMsg", s:mist_green, "", "")
+call s:hi("Question", s:mist_blue, "", "")
+call s:hi("Title", s:mist_green, "", "bold")
+
+" Treesitter highlights
+call s:hi("@comment", s:comment, "", "italic")
+call s:hi("@string", s:string, "", "")
+call s:hi("@number", s:number, "", "")
+call s:hi("@boolean", s:number, "", "")
+call s:hi("@float", s:number, "", "")
+call s:hi("@function", s:function_name, "", "")
+call s:hi("@method", s:function_name, "", "")
+call s:hi("@keyword", s:keyword, "", "")
+call s:hi("@conditional", s:keyword, "", "")
+call s:hi("@repeat", s:keyword, "", "")
+call s:hi("@label", s:keyword, "", "")
+call s:hi("@operator", s:mist_blue, "", "")
+call s:hi("@exception", s:error, "", "")
+call s:hi("@variable", s:variable, "", "")
+call s:hi("@type", s:type, "", "")
+call s:hi("@type.builtin", s:type, "", "")
+call s:hi("@constant", s:mist_brown, "", "")
+call s:hi("@constant.builtin", s:mist_brown, "", "")
+call s:hi("@namespace", s:mist_blue, "", "")
+call s:hi("@field", s:mist_green, "", "")
+call s:hi("@property", s:mist_green, "", "")
+call s:hi("@parameter", s:variable, "", "")
+call s:hi("@tag", s:mist_green, "", "")
+call s:hi("@tag.attribute", s:mist_brown, "", "")
+call s:hi("@tag.delimiter", s:fg, "", "")
+
+" LSP highlights
+call s:hi("LspReferenceText", "", s:bg_light, "")
+call s:hi("LspReferenceRead", "", s:bg_light, "")
+call s:hi("LspReferenceWrite", "", s:bg_light, "")
+
+" Diagnostic highlights
+call s:hi("DiagnosticError", s:error, "", "")
+call s:hi("DiagnosticWarn", s:warning, "", "")
+call s:hi("DiagnosticInfo", s:info, "", "")
+call s:hi("DiagnosticHint", s:hint, "", "")
+
+" Git signs
+call s:hi("GitSignsAdd", s:git_add, "", "")
+call s:hi("GitSignsChange", s:git_change, "", "")
+call s:hi("GitSignsDelete", s:git_delete, "", "")
+
+" Telescope
+call s:hi("TelescopeNormal", s:fg, s:bg_dark, "")
+call s:hi("TelescopeBorder", s:bg_light, "", "")
+call s:hi("TelescopePromptBorder", s:mist_blue, "", "")
+call s:hi("TelescopeResultsBorder", s:bg_light, "", "")
+call s:hi("TelescopePreviewBorder", s:bg_light, "", "")
+call s:hi("TelescopeSelection", s:fg, s:selection, "")
+call s:hi("TelescopeSelectionCaret", s:mist_green, "", "")
+call s:hi("TelescopeMatching", s:mist_blue, "", "bold")
+
+" NvimTree
+call s:hi("NvimTreeNormal", s:fg, s:bg_dark, "")
+call s:hi("NvimTreeFolderIcon", s:mist_blue, "", "")
+call s:hi("NvimTreeFolderName", s:mist_blue, "", "")
+call s:hi("NvimTreeOpenedFolderName", s:mist_green, "", "")
+call s:hi("NvimTreeIndentMarker", s:comment, "", "")
+call s:hi("NvimTreeGitDirty", s:git_change, "", "")
+call s:hi("NvimTreeGitNew", s:git_add, "", "")
+call s:hi("NvimTreeGitDeleted", s:git_delete, "", "")
